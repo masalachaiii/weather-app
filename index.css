@@ -1,0 +1,24 @@
+#units {
+    background-color: #E6FFE6;
+    border:3px solid #435d43;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #435d43;
+    font-family: "Pixelify Sans";
+}
+
+.title {
+    color: #435d43;
+    font-family: "Pixelify Sans";
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #85b885;
+}
