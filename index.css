@@ -5,12 +5,12 @@
     height: 45px;
     border-radius: 50%;
     color: #435d43;
-    font-family: "Pixelify Sans";
+    font-family: "Press Start 2P";
 }
 
 .title {
     color: #435d43;
-    font-family: "Pixelify Sans";
+    font-family: "Press Start 2P";
 }
 
 body {
@@ -21,4 +21,30 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #85b885;
+}
+
+#face {
+    width: 60%;
+}
+
+.temperature-container {
+    position: relative;
+    display: inline-block;
+}
+  
+.temperature-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+#temperature {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Press Start 2P";
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }

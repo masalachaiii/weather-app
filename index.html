@@ -3,19 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weather App</title>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+        <title>Earth Dimension C-137 Weather</title>
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="header">
-            <h2 class="title">C-137</h2>
+            <h2 class="title">C-137 Weather</h2>
             <button onclick="changeUnits()" id="units">°F</button>
         </div>
-        <div class="temperature">
-            <p id="temperature">Loading..</p>
+        <div class="temperature-container">
+            <img src="assets/portal.png" alt="portal" class="temperature-image"/>
+            <div id="temperature">Loading..</div>
         </div>
-        <div class="face"></div>
+        <img id="face" src="assets/morty.png" alt="Face" />
+        <div class="temperature-container">
+            <img src="assets/portal.png" alt="portal" class="temperature-image"/>
+            <div id="temperature">Loading..</div>
+        </div>
         <script src="renderer.js"></script>
     </body>
 </html>

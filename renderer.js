@@ -54,9 +54,14 @@ function changeBackground(isDay) {
 }
 
 function changeHead(weatherCode) {
-    if (weatherCode === (0 || 1 || 2 || 3 || 45 || 48)) {
-        document.getElementsByClassName("face").backgroundImage = "url('assets/morty.png')"
+    const faceImage = document.getElementById("face");
+
+    const mortyCodes = [0, 1, 2, 3, 45, 48];
+
+    if (mortyCodes.includes(weatherCode)) {
+        faceImage.src = "assets/morty.png";
     } else {
-        document.getElementsByClassName("face").backgroundImage = "url('assets/rick.png')"
+        faceImage.src = "assets/rick.png";
     }
-} 
+}
+
