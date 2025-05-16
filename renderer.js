@@ -1,13 +1,16 @@
+let temperature;
 const fetchData = async () => {
     try {
         const response = await window.api.get('https://api.open-meteo.com/v1/forecast?latitude=36.9741&longitude=-122.0308&current=temperature_2m,is_day,weather_code&temperature_unit=fahrenheit');
-        const temperature = response.current.temperature_2m;
+        temperature = response.current.temperature_2m;
         const isDay = response.current.is_day;
         const weatherCode = response.current.weather_code;
 
-        const temperatureElement = document.getElementById("temperature");
-        temperatureElement.textContent = `${temperature.toFixed(0)}`;
-
+        const temperatureElements = document.getElementsByClassName('temperature');
+        
+        for (const element of temperatureElements) {
+            element.textContent = `${temperature.toFixed(0)}`;
+        }
         changeBackground(isDay);
         changeHead(weatherCode);
     } catch (error) {
@@ -17,20 +20,22 @@ const fetchData = async () => {
 fetchData();
 
 function changeTemp(unit) {
-    let temp = document.getElementById("temperature").textContent;
-
-    temp = parseFloat(temp);
+    const temperatureElements = document.getElementsByClassName('temperature');
+    let newTemp;
 
     if (unit === "°F") {
-        const fahrenheit = (temp * 9/5) + 32;
-        document.getElementById("temperature").textContent = fahrenheit.toFixed(0);
+        newTemp = temperature;
     } else {
-        const celsius = (temp - 32) * (5/9);
-        document.getElementById("temperature").textContent = celsius.toFixed(0);
+        newTemp = (temperature - 32) * (5/9);
+    }
+
+    for (const element of temperatureElements) {
+        element.textContent = `${newTemp.toFixed(0)}`;
     }
 }
 
 function changeUnits() {
+    console.log("urmom");
     const unit = document.getElementById("units").textContent;
 
     if (unit === "°F") {

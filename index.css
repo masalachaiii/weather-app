@@ -27,18 +27,20 @@ body {
     width: 60%;
 }
 
-.temperature-container {
+#temperature-container1, #temperature-container2 {
     position: relative;
     display: inline-block;
+    transform: translateX(12px);
 }
   
 .temperature-image {
     display: block;
+    bottom: 0;
     width: 100%;
     height: auto;
 }
   
-#temperature {
+.temperature {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,4 +49,15 @@ body {
     font-family: "Press Start 2P";
     font-size: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+#temperature-container1 {
+    animation: bounce 8s infinite;
+    padding-left: 20px;
+}
+
+@keyframes bounce {
+    0%   { top: -230px; }
+    50%  { top: 150px; }
+    100% { top: -230px; }
 }
